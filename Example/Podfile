@@ -1,0 +1,7 @@
+
+target 'MBTNetworking', :exclusive => true do
+  pod "MBTNetworking", :path => "../"
+
+  pod 'Specta', '~> 0.2.1'
+  pod 'Expecta'
+end
