@@ -17,25 +17,25 @@
 + (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
                              path:(NSString *)path
                            params:(NSDictionary *)params
-                    responseBlock:(MBTHTTPResponseBlock)responseBlock {
+                    responseBlock:(void(^)(id responseObject, NSError *error))responseBlock {
     return [[[self class] alloc] initWithMethod:method path:path params:params responseBlock:responseBlock];
 }
 
 - (instancetype)initWithMethod:(MBTHTTPRequestMethod)method
                           path:(NSString *)path
                         params:(NSDictionary *)params
-                 responseBlock:(MBTHTTPResponseBlock)responseBlock {
+                 responseBlock:(void(^)(id responseObject, NSError *error))responseBlock {
     self = [super init];
     if (self) {
         _method = method;
         _path = path;
         _params = params;
         __weak typeof(self) weakSelf = self;
-        _responseBlock = ^void(NSURLSessionDataTask *task, id responseObject, NSError *error) {
+        _responseBlock = ^void(id responseObject, NSError *error) {
             id parsedObject = error ? nil : [weakSelf parseResponseObject:responseObject error:&error];
             
             if (responseBlock) {
-                responseBlock(task, parsedObject, error);
+                responseBlock(parsedObject, error);
             }
         };
     }
