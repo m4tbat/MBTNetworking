@@ -12,6 +12,9 @@
 
 @interface MBTNetworkManager : NSObject
 
+@property (nonatomic, strong) AFHTTPRequestSerializer<AFURLRequestSerialization> *requestSerializer;
+@property (nonatomic, strong) AFHTTPResponseSerializer<AFURLResponseSerialization> *responseSerializer;
+
 - (instancetype)initWithBaseURL:(NSURL *)baseURL;
 
 - (NSURLSessionDataTask *)performRequest:(MBTHTTPRequest *)request;

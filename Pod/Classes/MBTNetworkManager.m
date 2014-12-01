@@ -73,4 +73,20 @@
     return task;
 }
 
+- (AFHTTPRequestSerializer *)requestSerializer {
+    return self.httpManager.requestSerializer;
+}
+
+- (void)setRequestSerializer:(AFHTTPRequestSerializer<AFURLRequestSerialization> *)requestSerializer {
+    self.httpManager.requestSerializer = requestSerializer;
+}
+
+- (AFHTTPResponseSerializer<AFURLResponseSerialization> *)responseSerializer {
+    return self.httpManager.responseSerializer;
+}
+
+- (void)setResponseSerializer:(AFHTTPResponseSerializer<AFURLResponseSerialization> *)responseSerializer {
+    self.httpManager.responseSerializer = responseSerializer;
+}
+
 @end
