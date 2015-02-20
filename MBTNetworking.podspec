@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "MBTNetworking"
-  s.version          = "0.1.5"
+  s.version          = "0.2"
   s.summary          = "A simple networking library for iOS based on AFNetworking 2 and Mantle."
   s.description      = <<-DESC
                        A simple networking library for iOS based on AFNetworking 2 and Mantle.
