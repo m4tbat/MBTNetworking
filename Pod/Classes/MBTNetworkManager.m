@@ -43,6 +43,12 @@
         case DELETE:
             promise = [self.httpManager DELETE:request.path parameters:request.params];
             break;
+        case HEAD:
+            promise = [self.httpManager HEAD:request.path parameters:request.params];
+            break;
+        case PATCH:
+            promise = [self.httpManager HEAD:request.path parameters:request.params];
+            break;
         default:
             promise = nil;
             break;

@@ -13,7 +13,9 @@ typedef NS_ENUM(NSInteger, MBTHTTPRequestMethod) {
     GET,
     POST,
     PUT,
-    DELETE
+    DELETE,
+    HEAD,
+    PATCH
 };
 
 @interface MBTHTTPRequest : NSObject
@@ -21,16 +23,17 @@ typedef NS_ENUM(NSInteger, MBTHTTPRequestMethod) {
 @property (assign, nonatomic) MBTHTTPRequestMethod method;
 @property (copy, nonatomic) NSString *path;
 @property (strong, nonatomic) NSDictionary *params;
+@property (strong, nonatomic) Class modelClass;
 
 + (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
                              path:(NSString *)path
-                           params:(NSDictionary *)params;
+                           params:(NSDictionary *)params
+                       modelClass:(Class)modelClass;
 
 - (instancetype)initWithMethod:(MBTHTTPRequestMethod)method
                           path:(NSString *)path
-                        params:(NSDictionary *)params;
-
-- (Class)responseObjectClass;
+                        params:(NSDictionary *)params
+                    modelClass:(Class)modelClass;
 
 - (id)parseResponseObject:(id)responseObject error:(NSError **)error;
 

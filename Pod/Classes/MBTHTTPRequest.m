@@ -16,18 +16,21 @@
 
 + (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
                              path:(NSString *)path
-                           params:(NSDictionary *)params {
-    return [[self alloc] initWithMethod:method path:path params:params];
+                           params:(NSDictionary *)params
+                       modelClass:(__unsafe_unretained Class)modelClass {
+    return [[self alloc] initWithMethod:method path:path params:params modelClass:modelClass];
 }
 
 - (instancetype)initWithMethod:(MBTHTTPRequestMethod)method
                           path:(NSString *)path
-                        params:(NSDictionary *)params {
+                        params:(NSDictionary *)params
+                    modelClass:(__unsafe_unretained Class)modelClass {
     self = [super init];
     if (self) {
         _method = method;
         _path = path;
         _params = params;
+        _modelClass = modelClass;
     }
     return self;
 }
@@ -37,10 +40,10 @@
         return responseObject;
     }
     if ([responseObject isKindOfClass:[NSDictionary class]]) {
-        return [MTLJSONAdapter modelOfClass:[self responseObjectClass] fromJSONDictionary:responseObject error:error];
+        return [MTLJSONAdapter modelOfClass:self.modelClass fromJSONDictionary:responseObject error:error];
     }
     else if ([responseObject isKindOfClass:[NSArray class]]) {
-        return [MTLJSONAdapter modelsOfClass:[self responseObjectClass] fromJSONArray:responseObject error:error];
+        return [MTLJSONAdapter modelsOfClass:self.modelClass fromJSONArray:responseObject error:error];
     }
     else {
         if (error != NULL) {
@@ -53,11 +56,6 @@
         
         return nil;
     }
-}
-
-- (Class)responseObjectClass {
-    [NSException raise:@"MBTHTTPRequest.responseObjectClassException" format:@"%@ does not override mandatory MBTHTTPRequest's responseObjectClass method", NSStringFromClass([self class])];
-    return nil;
 }
 
 @end
