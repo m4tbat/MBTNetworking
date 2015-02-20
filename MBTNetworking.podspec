@@ -22,6 +22,7 @@ Pod::Spec.new do |s|
   # s.resources = 'Pod/Assets/*.png'
 
   s.public_header_files = 'Pod/Classes/**/*.h'
-  s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'AFNetworking', '~> 2.5'
   s.dependency 'Mantle', '~> 1.5'
+  s.dependency 'PromiseKit', '~> 1.2'
 end

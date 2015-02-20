@@ -16,10 +16,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1038D30E68F84D06BBC35033 /* Pods-MBTNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBTNetworking.xcconfig"; path = "Pods/Pods-MBTNetworking.xcconfig"; sourceTree = "<group>"; };
 		1C535182146E4604A935EFC2 /* libPods-MBTNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBTNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B1A564C67B4149A853C448 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		2DDA010041EC473F9AC3D1EA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		4216D5061E934187AFC7088A /* Pods-MBTNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBTNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-MBTNetworking/Pods-MBTNetworking.release.xcconfig"; sourceTree = "<group>"; };
 		4A8412767F2C4D518B7D92E0 /* MBTNetworking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MBTNetworking.podspec; path = ../MBTNetworking.podspec; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* MBTNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBTNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -31,6 +31,7 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		82F38D039668A0D2104ED397 /* Pods-MBTNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBTNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MBTNetworking/Pods-MBTNetworking.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +56,7 @@
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
-				1038D30E68F84D06BBC35033 /* Pods-MBTNetworking.xcconfig */,
+				66C3C3D0B681B1BBA669B297 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +108,15 @@
 				2DDA010041EC473F9AC3D1EA /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		66C3C3D0B681B1BBA669B297 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82F38D039668A0D2104ED397 /* Pods-MBTNetworking.debug.xcconfig */,
+				4216D5061E934187AFC7088A /* Pods-MBTNetworking.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +213,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-MBTNetworking-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MBTNetworking/Pods-MBTNetworking-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -305,7 +315,7 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1038D30E68F84D06BBC35033 /* Pods-MBTNetworking.xcconfig */;
+			baseConfigurationReference = 82F38D039668A0D2104ED397 /* Pods-MBTNetworking.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -327,7 +337,7 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1038D30E68F84D06BBC35033 /* Pods-MBTNetworking.xcconfig */;
+			baseConfigurationReference = 4216D5061E934187AFC7088A /* Pods-MBTNetworking.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

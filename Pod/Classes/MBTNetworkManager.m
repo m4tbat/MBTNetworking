@@ -8,6 +8,7 @@
 
 #import "MBTNetworkManager.h"
 #import <AFNetworking.h>
+#import <Promise.h>
 
 @interface MBTNetworkManager ()
 
@@ -27,50 +28,49 @@
     return self;
 }
 
-- (NSURLSessionDataTask *)performRequest:(MBTHTTPRequest *)request {
-    NSURLSessionDataTask *task;
-    void (^successBlock)(NSURLSessionDataTask *, id) = ^void(NSURLSessionDataTask *task, id responseObject) {
-        if (request.responseBlock) {
-            request.responseBlock(responseObject, nil);
-        }
-    };
-    void (^failureBlock)(NSURLSessionDataTask *, NSError *) = ^void(NSURLSessionDataTask *task, NSError *error) {
-        if (request.responseBlock) {
-            request.responseBlock(nil, error);
-        }
-    };
+- (PMKPromise *)performRequest:(MBTHTTPRequest *)request {
+//    NSURLSessionDataTask *task;
+//    void (^successBlock)(NSURLSessionDataTask *, id) = ^void(NSURLSessionDataTask *task, id responseObject) {
+//        if (request.responseBlock) {
+//            request.responseBlock(responseObject, nil);
+//        }
+//    };
+//    void (^failureBlock)(NSURLSessionDataTask *, NSError *) = ^void(NSURLSessionDataTask *task, NSError *error) {
+//        if (request.responseBlock) {
+//            request.responseBlock(nil, error);
+//        }
+//    };
     
+    PMKPromise *promise;
     switch (request.method) {
         case GET:
-            task = [self.httpManager GET:request.path
-                              parameters:request.params
-                                 success:successBlock
-                                 failure:failureBlock];
+            promise = [self.httpManager GET:request.path parameters:request.params];
             break;
         case POST:
-            task = [self.httpManager POST:request.path
-                               parameters:request.params
-                                  success:successBlock
-                                  failure:failureBlock];
+            promise = [self.httpManager POST:request.path parameters:request.params];
             break;
         case PUT:
-            task = [self.httpManager PUT:request.path
-                              parameters:request.params
-                                 success:successBlock
-                                 failure:failureBlock];
+            promise = [self.httpManager PUT:request.path parameters:request.params];
             break;
         case DELETE:
-            task = [self.httpManager DELETE:request.path
-                                 parameters:request.params
-                                    success:successBlock
-                                    failure:failureBlock];
+            promise = [self.httpManager DELETE:request.path parameters:request.params];
             break;
         default:
-            task = nil;
+            promise = nil;
             break;
     }
     
-    return task;
+    return promise.then(^(id responseObject, NSURLSessionTask *task) {
+        NSError *error = nil;
+        id parsedObject = [request parseResponseObject:responseObject error:&error];
+        return [PMKPromise new:^(PMKPromiseFulfiller fulfill, PMKPromiseRejecter reject) {
+            if (error) {
+                reject(error);
+            } else {
+                fulfill(PMKManifold(parsedObject, task));
+            }
+        }];
+    });
 }
 
 - (AFHTTPRequestSerializer *)requestSerializer {

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking.h>
+#import <AFNetworking+PromiseKit.h>
 #import "MBTHTTPRequest.h"
 
 @interface MBTNetworkManager : NSObject
@@ -17,6 +17,6 @@
 
 - (instancetype)initWithBaseURL:(NSURL *)baseURL;
 
-- (NSURLSessionDataTask *)performRequest:(MBTHTTPRequest *)request;
+- (PMKPromise *)performRequest:(MBTHTTPRequest *)request;
 
 @end

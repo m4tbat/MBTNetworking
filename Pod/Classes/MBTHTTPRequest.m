@@ -16,28 +16,28 @@
 
 + (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
                              path:(NSString *)path
-                           params:(NSDictionary *)params
-                    responseBlock:(void(^)(id responseObject, NSError *error))responseBlock {
-    return [[[self class] alloc] initWithMethod:method path:path params:params responseBlock:responseBlock];
+                           params:(NSDictionary *)params {
+//                    responseBlock:(void(^)(id responseObject, NSError *error))responseBlock {
+    return [[self alloc] initWithMethod:method path:path params:params];// responseBlock:responseBlock];
 }
 
 - (instancetype)initWithMethod:(MBTHTTPRequestMethod)method
                           path:(NSString *)path
-                        params:(NSDictionary *)params
-                 responseBlock:(void(^)(id responseObject, NSError *error))responseBlock {
+                        params:(NSDictionary *)params {
+//                 responseBlock:(void(^)(id responseObject, NSError *error))responseBlock {
     self = [super init];
     if (self) {
         _method = method;
         _path = path;
         _params = params;
-        __weak typeof(self) weakSelf = self;
-        _responseBlock = ^void(id responseObject, NSError *error) {
-            id parsedObject = error ? nil : [weakSelf parseResponseObject:responseObject error:&error];
-            
-            if (responseBlock) {
-                responseBlock(parsedObject, error);
-            }
-        };
+//        __weak typeof(self) weakSelf = self;
+//        _responseBlock = ^void(id responseObject, NSError *error) {
+//            id parsedObject = error ? nil : [weakSelf parseResponseObject:responseObject error:&error];
+//            
+//            if (responseBlock) {
+//                responseBlock(parsedObject, error);
+//            }
+//        };
     }
     return self;
 }

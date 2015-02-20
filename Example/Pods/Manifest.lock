@@ -1,37 +1,80 @@
 PODS:
-  - AFNetworking (2.3.1):
+  - AFNetworking (2.5.1):
+    - AFNetworking/NSURLConnection (= 2.5.1)
+    - AFNetworking/NSURLSession (= 2.5.1)
+    - AFNetworking/Reachability (= 2.5.1)
+    - AFNetworking/Security (= 2.5.1)
+    - AFNetworking/Serialization (= 2.5.1)
+    - AFNetworking/UIKit (= 2.5.1)
+  - AFNetworking/NSURLConnection (2.5.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.1)
+  - AFNetworking/Security (2.5.1)
+  - AFNetworking/Serialization (2.5.1)
+  - AFNetworking/UIKit (2.5.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-    - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.3.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.3.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.3.1)
-  - AFNetworking/Security (2.3.1)
-  - AFNetworking/Serialization (2.3.1)
-  - AFNetworking/UIKit (2.3.1):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-  - Expecta (0.3.1)
-  - Mantle (1.5):
-    - Mantle/extobjc
-  - Mantle/extobjc (1.5)
+  - Expecta (0.3.2)
+  - Mantle (1.5.4):
+    - Mantle/extobjc (= 1.5.4)
+  - Mantle/extobjc (1.5.4)
   - MBTNetworking (0.1.0):
     - AFNetworking (~> 2.3)
     - Mantle (~> 1.5)
+  - OMGHTTPURLRQ (2.1):
+    - OMGHTTPURLRQ/RQ (= 2.1)
+  - OMGHTTPURLRQ/FormURLEncode (2.1)
+  - OMGHTTPURLRQ/RQ (2.1):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (2.1)
+  - PromiseKit (1.2.4):
+    - PromiseKit/CALayer (= 1.2.4)
+    - PromiseKit/NSNotificationCenter (= 1.2.4)
+    - PromiseKit/NSURLConnection (= 1.2.4)
+    - PromiseKit/Pause (= 1.2.4)
+    - PromiseKit/UIActionSheet (= 1.2.4)
+    - PromiseKit/UIAlertView (= 1.2.4)
+    - PromiseKit/UIView (= 1.2.4)
+    - PromiseKit/UIViewController (= 1.2.4)
+    - PromiseKit/Until (= 1.2.4)
+    - PromiseKit/When (= 1.2.4)
+  - PromiseKit/CALayer (1.2.4):
+    - PromiseKit/Promise
+  - PromiseKit/NSNotificationCenter (1.2.4):
+    - PromiseKit/Promise
+  - PromiseKit/NSURLConnection (1.2.4):
+    - OMGHTTPURLRQ
+    - PromiseKit/Promise
+  - PromiseKit/Pause (1.2.4):
+    - PromiseKit/Promise
+  - PromiseKit/Promise (1.2.4)
+  - PromiseKit/UIActionSheet (1.2.4):
+    - PromiseKit/Promise
+  - PromiseKit/UIAlertView (1.2.4):
+    - PromiseKit/Promise
+  - PromiseKit/UIView (1.2.4):
+    - PromiseKit/Promise
+  - PromiseKit/UIViewController (1.2.4):
+    - PromiseKit/Promise
+  - PromiseKit/Until (1.2.4):
+    - PromiseKit/Promise
+    - PromiseKit/When
+  - PromiseKit/When (1.2.4):
+    - PromiseKit/Promise
   - Specta (0.2.1)
 
 DEPENDENCIES:
   - Expecta
+  - Mantle (~> 1.5)
   - MBTNetworking (from `../`)
+  - PromiseKit (~> 1.2)
   - Specta (~> 0.2.1)
 
 EXTERNAL SOURCES:
@@ -39,10 +82,12 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
-  Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
-  Mantle: c67a7e45e14196ed42b2a7cbb98ff6a9920e6b92
+  AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
+  Expecta: ee641011fe10aa1855d487b40e4976dac50ec342
+  Mantle: d5fbaf30fbc58031223af13812c060e15934a1fe
   MBTNetworking: e9aaff93fbcb8ee423af760f4ce42b07f91783a1
+  OMGHTTPURLRQ: f8c515dfd2f57a5d74c710978f600231f52afec5
+  PromiseKit: 9bc78045d01a5ec119a2f8ebbfbc415ad26b674d
   Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.36.0.beta.2
