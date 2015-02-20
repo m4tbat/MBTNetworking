@@ -686,14 +686,14 @@
 		1F4CF3974B3DCABE12C8E35B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7C06443A12A8D58C97B24E15 /* AFNetworking+PromiseKit.h */,
-				5E0E82793EA4EA5789ABED97 /* AFNetworking+PromiseKit.m */,
 				0D51D3F652F10F04D8024B19 /* MBTHTTPRequest.h */,
 				EA5BAB0C6B6AC57A2FF8673A /* MBTHTTPRequest.m */,
 				0FD4D3BB481675AD070A43FB /* MBTModel.h */,
 				BAC7CED02DDEBFEB0C79321D /* MBTModel.m */,
 				D7F8336E128583009E834123 /* MBTNetworkManager.h */,
 				248D5B7D044BA4BEF676FF9E /* MBTNetworkManager.m */,
+				7C06443A12A8D58C97B24E15 /* AFNetworking+PromiseKit.h */,
+				5E0E82793EA4EA5789ABED97 /* AFNetworking+PromiseKit.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

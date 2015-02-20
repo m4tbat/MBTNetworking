@@ -21,17 +21,14 @@ typedef NS_ENUM(NSInteger, MBTHTTPRequestMethod) {
 @property (assign, nonatomic) MBTHTTPRequestMethod method;
 @property (copy, nonatomic) NSString *path;
 @property (strong, nonatomic) NSDictionary *params;
-//@property (copy, nonatomic) void(^responseBlock)(id responseObject, NSError *error);
 
 + (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
                              path:(NSString *)path
                            params:(NSDictionary *)params;
-//                    responseBlock:(void(^)(id responseObject, NSError *error))responseBlock;
 
 - (instancetype)initWithMethod:(MBTHTTPRequestMethod)method
                           path:(NSString *)path
                         params:(NSDictionary *)params;
-//                 responseBlock:(void(^)(id responseObject, NSError *error))responseBlock;
 
 - (Class)responseObjectClass;
 

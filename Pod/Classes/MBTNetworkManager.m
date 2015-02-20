@@ -29,18 +29,6 @@
 }
 
 - (PMKPromise *)performRequest:(MBTHTTPRequest *)request {
-//    NSURLSessionDataTask *task;
-//    void (^successBlock)(NSURLSessionDataTask *, id) = ^void(NSURLSessionDataTask *task, id responseObject) {
-//        if (request.responseBlock) {
-//            request.responseBlock(responseObject, nil);
-//        }
-//    };
-//    void (^failureBlock)(NSURLSessionDataTask *, NSError *) = ^void(NSURLSessionDataTask *task, NSError *error) {
-//        if (request.responseBlock) {
-//            request.responseBlock(nil, error);
-//        }
-//    };
-    
     PMKPromise *promise;
     switch (request.method) {
         case GET:
