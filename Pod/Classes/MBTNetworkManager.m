@@ -31,22 +31,22 @@
 - (PMKPromise *)performRequest:(MBTHTTPRequest *)request {
     PMKPromise *promise;
     switch (request.method) {
-        case GET:
+        case MBT_GET:
             promise = [self.httpManager GET:request.path parameters:request.params];
             break;
-        case POST:
+        case MBT_POST:
             promise = [self.httpManager POST:request.path parameters:request.params];
             break;
-        case PUT:
+        case MBT_PUT:
             promise = [self.httpManager PUT:request.path parameters:request.params];
             break;
-        case DELETE:
+        case MBT_DELETE:
             promise = [self.httpManager DELETE:request.path parameters:request.params];
             break;
-        case HEAD:
+        case MBT_HEAD:
             promise = [self.httpManager HEAD:request.path parameters:request.params];
             break;
-        case PATCH:
+        case MBT_PATCH:
             promise = [self.httpManager HEAD:request.path parameters:request.params];
             break;
         default:

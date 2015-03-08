@@ -10,12 +10,12 @@
 #import <MTLJSONAdapter.h>
 
 typedef NS_ENUM(NSInteger, MBTHTTPRequestMethod) {
-    GET,
-    POST,
-    PUT,
-    DELETE,
-    HEAD,
-    PATCH
+    MBT_GET,
+    MBT_POST,
+    MBT_PUT,
+    MBT_DELETE,
+    MBT_HEAD,
+    MBT_PATCH
 };
 
 @interface MBTHTTPRequest : NSObject
