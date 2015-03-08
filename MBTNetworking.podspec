@@ -1,28 +1,18 @@
-#
-# Be sure to run `pod lib lint MBTNetworking.podspec' to ensure this is a
-# valid spec and remove all comments before submitting the spec.
-#
-# Any lines starting with a # are optional, but encouraged
-#
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = "MBTNetworking"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of MBTNetworking."
+  s.version          = "0.2.2"
+  s.summary          = "A simple networking library for iOS based on AFNetworking 2, Mantle and PromiseKit."
   s.description      = <<-DESC
-                       An optional longer description of MBTNetworking
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                          A simple networking library for iOS based on AFNetworking 2, Mantle and PromiseKit.
+                          The aim of MBTNetworking is to streamline the implementation of
+                          requests to REST APIs and the mapping of the response objects to
+                          model objects.
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/MBTNetworking"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/madbat/MBTNetworking"
   s.license          = 'MIT'
   s.author           = { "Matteo Battaglio" => "m4dbat@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/MBTNetworking.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/madbat/MBTNetworking.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/m4dbat'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -31,8 +21,8 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'MBTNetworking' => ['Pod/Assets/*.png']
   }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  
+  s.dependency 'AFNetworking', '~> 2.5'
+  s.dependency 'Mantle', '~> 1.5'
+  s.dependency 'PromiseKit', '~> 1.2'
 end

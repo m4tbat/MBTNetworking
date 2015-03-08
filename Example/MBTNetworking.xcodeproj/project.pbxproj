@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24B0CC0675B5B5184CF18E77 /* libPods-MBTNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76FA537BE9915FD18C769DE3 /* libPods-MBTNetworking.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -22,6 +23,10 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		95739A351AACAD57001E885E /* MBTSampleRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95739A341AACAD57001E885E /* MBTSampleRequests.m */; };
+		95739A411AACAFF0001E885E /* MBTHTTPBinGetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95739A401AACAFF0001E885E /* MBTHTTPBinGetModel.m */; };
+		95739A441AACB0DC001E885E /* MBTHTTPBinHeadersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95739A431AACB0DC001E885E /* MBTHTTPBinHeadersModel.m */; };
+		AF0589716D60190284ED28CF /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4736E0F7FF02E544F36FA8 /* libPods-Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,9 @@
 
 /* Begin PBXFileReference section */
 		1E0EF1CF824C3EB8E25FBD43 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		535CD3B0F717CBD28FC93B52 /* MBTNetworking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = MBTNetworking.podspec; path = ../MBTNetworking.podspec; sourceTree = "<group>"; };
+		2265FA3A016DCA1FE1196C8B /* Pods-MBTNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBTNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MBTNetworking/Pods-MBTNetworking.debug.xcconfig"; sourceTree = "<group>"; };
+		2C80F4A4E909AE523E77B5EA /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		535CD3B0F717CBD28FC93B52 /* MBTNetworking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MBTNetworking.podspec; path = ../MBTNetworking.podspec; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* MBTNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBTNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,7 +65,17 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		8BA27469897CCC8D9D49437A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		76FA537BE9915FD18C769DE3 /* libPods-MBTNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBTNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BA27469897CCC8D9D49437A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		95739A331AACAD57001E885E /* MBTSampleRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTSampleRequests.h; sourceTree = "<group>"; };
+		95739A341AACAD57001E885E /* MBTSampleRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTSampleRequests.m; sourceTree = "<group>"; };
+		95739A3F1AACAFF0001E885E /* MBTHTTPBinGetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTHTTPBinGetModel.h; sourceTree = "<group>"; };
+		95739A401AACAFF0001E885E /* MBTHTTPBinGetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTHTTPBinGetModel.m; sourceTree = "<group>"; };
+		95739A421AACB0DC001E885E /* MBTHTTPBinHeadersModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTHTTPBinHeadersModel.h; sourceTree = "<group>"; };
+		95739A431AACB0DC001E885E /* MBTHTTPBinHeadersModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTHTTPBinHeadersModel.m; sourceTree = "<group>"; };
+		AEC5C10FAF7E7B628A11514A /* Pods-MBTNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBTNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-MBTNetworking/Pods-MBTNetworking.release.xcconfig"; sourceTree = "<group>"; };
+		DD4736E0F7FF02E544F36FA8 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB2CAC1275BC9332062C182C /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +86,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
+				24B0CC0675B5B5184CF18E77 /* libPods-MBTNetworking.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,12 +97,24 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
+				AF0589716D60190284ED28CF /* libPods-Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		183A95E7BD5A73B1C8E01917 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2265FA3A016DCA1FE1196C8B /* Pods-MBTNetworking.debug.xcconfig */,
+				AEC5C10FAF7E7B628A11514A /* Pods-MBTNetworking.release.xcconfig */,
+				2C80F4A4E909AE523E77B5EA /* Pods-Tests.debug.xcconfig */,
+				EB2CAC1275BC9332062C182C /* Pods-Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +123,7 @@
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
+				183A95E7BD5A73B1C8E01917 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +143,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
+				76FA537BE9915FD18C769DE3 /* libPods-MBTNetworking.a */,
+				DD4736E0F7FF02E544F36FA8 /* libPods-Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,10 +154,16 @@
 			children = (
 				6003F59C195388D20070C39A /* MBTAppDelegate.h */,
 				6003F59D195388D20070C39A /* MBTAppDelegate.m */,
-				6003F59F195388D20070C39A /* Main_iPhone.storyboard */,
-				6003F5A2195388D20070C39A /* Main_iPad.storyboard */,
 				6003F5A5195388D20070C39A /* MBTViewController.h */,
 				6003F5A6195388D20070C39A /* MBTViewController.m */,
+				95739A331AACAD57001E885E /* MBTSampleRequests.h */,
+				95739A341AACAD57001E885E /* MBTSampleRequests.m */,
+				95739A3F1AACAFF0001E885E /* MBTHTTPBinGetModel.h */,
+				95739A401AACAFF0001E885E /* MBTHTTPBinGetModel.m */,
+				95739A421AACB0DC001E885E /* MBTHTTPBinHeadersModel.h */,
+				95739A431AACB0DC001E885E /* MBTHTTPBinHeadersModel.m */,
+				6003F59F195388D20070C39A /* Main_iPhone.storyboard */,
+				6003F5A2195388D20070C39A /* Main_iPad.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -178,9 +217,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "MBTNetworking" */;
 			buildPhases = (
+				D2359F874007332720F02CD3 /* Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
+				9509584C88A1EB98252991C5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,9 +236,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
+				4B95058FF48B4E3E720F8D49 /* Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
+				126DF95D9C9D280EC2F91504 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -224,7 +267,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "PROJECT" */;
+			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "MBTNetworking" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -265,6 +308,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		126DF95D9C9D280EC2F91504 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B95058FF48B4E3E720F8D49 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9509584C88A1EB98252991C5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MBTNetworking/Pods-MBTNetworking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2359F874007332720F02CD3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6003F586195388D20070C39A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -273,6 +379,9 @@
 				6003F59E195388D20070C39A /* MBTAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* MBTViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				95739A411AACAFF0001E885E /* MBTHTTPBinGetModel.m in Sources */,
+				95739A441AACB0DC001E885E /* MBTHTTPBinHeadersModel.m in Sources */,
+				95739A351AACAD57001E885E /* MBTSampleRequests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +513,7 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2265FA3A016DCA1FE1196C8B /* Pods-MBTNetworking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -417,6 +527,7 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEC5C10FAF7E7B628A11514A /* Pods-MBTNetworking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -430,6 +541,7 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C80F4A4E909AE523E77B5EA /* Pods-Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MBTNetworking.app/MBTNetworking";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -452,6 +564,7 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB2CAC1275BC9332062C182C /* Pods-Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MBTNetworking.app/MBTNetworking";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -471,7 +584,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6003F585195388D10070C39A /* Build configuration list for PBXProject "PROJECT" */ = {
+		6003F585195388D10070C39A /* Build configuration list for PBXProject "MBTNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6003F5BD195388D20070C39A /* Debug */,

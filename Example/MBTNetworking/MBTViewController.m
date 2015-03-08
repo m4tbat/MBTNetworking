@@ -8,22 +8,29 @@
 
 #import "MBTViewController.h"
 
+#import <MBTNetworkManager.h>
+#import "MBTSampleRequests.h"
+#import "MBTHTTPBinGetModel.h"
+#import "MBTHTTPBinHeadersModel.h"
+
 @interface MBTViewController ()
 
 @end
 
 @implementation MBTViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    MBTNetworkManager *manager = [[MBTNetworkManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://httpbin.org"]];
+    [manager performRequest:[MBTSampleRequests get]].then(^(MBTHTTPBinGetModel *getModel) {
+        NSLog(@"Origin: %@", getModel.origin);
+        NSLog(@"User-Agent: %@", getModel.headers.userAgent);
+    });
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

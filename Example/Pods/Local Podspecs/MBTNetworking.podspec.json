@@ -1,0 +1,36 @@
+{
+  "name": "MBTNetworking",
+  "version": "0.1.0",
+  "summary": "A short description of MBTNetworking.",
+  "description": "                       An optional longer description of MBTNetworking\n\n                       * Markdown format.\n                       * Don't worry about the indent, we strip it!\n",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/MBTNetworking",
+  "license": "MIT",
+  "authors": {
+    "Matteo Battaglio": "m4dbat@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/MBTNetworking.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "MBTNetworking": [
+      "Pod/Assets/*.png"
+    ]
+  },
+  "dependencies": {
+    "AFNetworking": [
+      "~> 2.5"
+    ],
+    "Mantle": [
+      "~> 1.5"
+    ],
+    "PromiseKit": [
+      "~> 1.2"
+    ]
+  }
+}
