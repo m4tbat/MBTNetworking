@@ -27,6 +27,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+MBTNetworking requires iOS 7.0+
+
 ## Installation
 
 MBTNetworking is available through [CocoaPods](http://cocoapods.org). To install
