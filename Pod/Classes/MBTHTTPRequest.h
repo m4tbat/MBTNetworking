@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MTLJSONAdapter.h>
+#import <PromiseKit.h>
 
 typedef NS_ENUM(NSInteger, MBTHTTPRequestMethod) {
     MBT_GET,
@@ -24,17 +25,30 @@ typedef NS_ENUM(NSInteger, MBTHTTPRequestMethod) {
 @property (copy, nonatomic) NSString *path;
 @property (strong, nonatomic) NSDictionary *params;
 @property (strong, nonatomic) Class modelClass;
+@property (copy, nonatomic) NSString *jsonRootPath;
 
 + (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
                              path:(NSString *)path
                            params:(NSDictionary *)params
                        modelClass:(Class)modelClass;
 
++ (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
+                             path:(NSString *)path
+                           params:(NSDictionary *)params
+                       modelClass:(Class)modelClass
+                     jsonRootPath:(NSString *)jsonRootPath;
+
 - (instancetype)initWithMethod:(MBTHTTPRequestMethod)method
                           path:(NSString *)path
                         params:(NSDictionary *)params
                     modelClass:(Class)modelClass;
 
-- (id)parseResponseObject:(id)responseObject error:(NSError **)error;
+- (instancetype)initWithMethod:(MBTHTTPRequestMethod)method
+                          path:(NSString *)path
+                        params:(NSDictionary *)params
+                    modelClass:(Class)modelClass
+                  jsonRootPath:(NSString *)jsonRootPath;
+
+- (PMKPromise *)parseResponseObject:(id)responseObject;
 
 @end

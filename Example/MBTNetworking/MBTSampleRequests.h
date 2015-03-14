@@ -13,4 +13,6 @@
 
 + (MBTHTTPRequest *)get;
 
++ (MBTHTTPRequest *)headers;
+
 @end

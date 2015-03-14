@@ -154,14 +154,9 @@
 			children = (
 				6003F59C195388D20070C39A /* MBTAppDelegate.h */,
 				6003F59D195388D20070C39A /* MBTAppDelegate.m */,
-				6003F5A5195388D20070C39A /* MBTViewController.h */,
-				6003F5A6195388D20070C39A /* MBTViewController.m */,
-				95739A331AACAD57001E885E /* MBTSampleRequests.h */,
-				95739A341AACAD57001E885E /* MBTSampleRequests.m */,
-				95739A3F1AACAFF0001E885E /* MBTHTTPBinGetModel.h */,
-				95739A401AACAFF0001E885E /* MBTHTTPBinGetModel.m */,
-				95739A421AACB0DC001E885E /* MBTHTTPBinHeadersModel.h */,
-				95739A431AACB0DC001E885E /* MBTHTTPBinHeadersModel.m */,
+				95825F471AB4622800455ECB /* Requests */,
+				95825F461AB4621F00455ECB /* Models */,
+				95825F491AB4625400455ECB /* Controllers */,
 				6003F59F195388D20070C39A /* Main_iPhone.storyboard */,
 				6003F5A2195388D20070C39A /* Main_iPad.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
@@ -208,6 +203,35 @@
 				1E0EF1CF824C3EB8E25FBD43 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		95825F461AB4621F00455ECB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95739A3F1AACAFF0001E885E /* MBTHTTPBinGetModel.h */,
+				95739A401AACAFF0001E885E /* MBTHTTPBinGetModel.m */,
+				95739A421AACB0DC001E885E /* MBTHTTPBinHeadersModel.h */,
+				95739A431AACB0DC001E885E /* MBTHTTPBinHeadersModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		95825F471AB4622800455ECB /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				95739A331AACAD57001E885E /* MBTSampleRequests.h */,
+				95739A341AACAD57001E885E /* MBTSampleRequests.m */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		95825F491AB4625400455ECB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6003F5A5195388D20070C39A /* MBTViewController.h */,
+				6003F5A6195388D20070C39A /* MBTViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

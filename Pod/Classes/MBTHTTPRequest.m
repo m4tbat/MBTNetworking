@@ -18,44 +18,65 @@
                              path:(NSString *)path
                            params:(NSDictionary *)params
                        modelClass:(__unsafe_unretained Class)modelClass {
-    return [[self alloc] initWithMethod:method path:path params:params modelClass:modelClass];
+    return [self requestWithMethod:method path:path params:params modelClass:modelClass jsonRootPath:nil];
+}
+
++ (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
+                             path:(NSString *)path
+                           params:(NSDictionary *)params
+                       modelClass:(__unsafe_unretained Class)modelClass
+                     jsonRootPath:(NSString *)jsonRootPath {
+    return [[self alloc] initWithMethod:method path:path params:params modelClass:modelClass jsonRootPath:jsonRootPath];
 }
 
 - (instancetype)initWithMethod:(MBTHTTPRequestMethod)method
                           path:(NSString *)path
                         params:(NSDictionary *)params
-                    modelClass:(__unsafe_unretained Class)modelClass {
+                    modelClass:(Class)modelClass {
+    return [self initWithMethod:method path:path params:params modelClass:modelClass jsonRootPath:nil];
+}
+
+- (instancetype)initWithMethod:(MBTHTTPRequestMethod)method
+                          path:(NSString *)path
+                        params:(NSDictionary *)params
+                    modelClass:(__unsafe_unretained Class)modelClass
+                  jsonRootPath:(NSString *)jsonRootPath {
     self = [super init];
     if (self) {
         _method = method;
         _path = path;
         _params = params;
         _modelClass = modelClass;
+        _jsonRootPath = jsonRootPath;
     }
     return self;
 }
 
-- (id)parseResponseObject:(id)responseObject error:(NSError **)error {
-    if ([responseObject isKindOfClass:[NSString class]] || [responseObject isKindOfClass:[NSNumber class]]) {
-        return responseObject;
-    }
-    if ([responseObject isKindOfClass:[NSDictionary class]]) {
-        return [MTLJSONAdapter modelOfClass:self.modelClass fromJSONDictionary:responseObject error:error];
-    }
-    else if ([responseObject isKindOfClass:[NSArray class]]) {
-        return [MTLJSONAdapter modelsOfClass:self.modelClass fromJSONArray:responseObject error:error];
-    }
-    else {
-        if (error != NULL) {
-			NSDictionary *userInfo = @{
-                                       NSLocalizedDescriptionKey: [NSString stringWithFormat:NSLocalizedString(@"responseObject class is neither NSDictionary nor NSArray, but %@", nil), [responseObject class]],
-                                       NSLocalizedFailureReasonErrorKey: [NSString stringWithFormat:NSLocalizedString(@"responseObject class must be NSDictionary or NSArray", nil), [responseObject class]],
-                                       };
-			*error = [NSError errorWithDomain:MTLJSONAdapterErrorDomain code:MTLJSONAdapterErrorInvalidJSONDictionary userInfo:userInfo];
-		}
+- (PMKPromise *)parseResponseObject:(id)responseObject {
+    assert([responseObject isKindOfClass:[NSString class]] ||
+           [responseObject isKindOfClass:[NSNumber class]] ||
+           [responseObject isKindOfClass:[NSArray class]] ||
+           [responseObject isKindOfClass:[NSDictionary class]]);
+    
+    return [PMKPromise new:^(PMKPromiseFulfiller fulfill, PMKPromiseRejecter reject) {
+        NSError *error = nil;
+        id parsedObject = nil;
         
-        return nil;
-    }
+        if ([responseObject isKindOfClass:[NSString class]] || [responseObject isKindOfClass:[NSNumber class]]) {
+            parsedObject = responseObject;
+        } else if ([responseObject isKindOfClass:[NSArray class]]) {
+            parsedObject = [MTLJSONAdapter modelsOfClass:self.modelClass fromJSONArray:responseObject error:&error];
+        } else if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            id unwrappedObject = self.jsonRootPath ? responseObject[self.jsonRootPath] : responseObject;
+            parsedObject = [MTLJSONAdapter modelOfClass:self.modelClass fromJSONDictionary:unwrappedObject error:&error];
+        }
+        
+        if (!error) {
+            fulfill(parsedObject);
+        } else {
+            reject(error);
+        }
+    }];
 }
 
 @end

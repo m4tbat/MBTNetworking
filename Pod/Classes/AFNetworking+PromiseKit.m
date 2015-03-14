@@ -119,7 +119,7 @@
 		[[self POST:urlString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
 			fulfiller(PMKManifold(responseObject, task));
 		} failure:^(NSURLSessionDataTask *task, NSError *error) {
-			rejecter(error);
+			rejecter(PMKManifold(error, task));
 		}] resume];
 	}];
 }
@@ -130,7 +130,7 @@
 		[[self POST:urlString parameters:parameters constructingBodyWithBlock:block success:^(NSURLSessionDataTask *task, id responseObject) {
 			fulfiller(PMKManifold(responseObject, task));
 		} failure:^(NSURLSessionDataTask *task, NSError *error) {
-			rejecter(error);
+			rejecter(PMKManifold(error, task));
 		}] resume];
 	}];
 }
@@ -141,7 +141,7 @@
 		[[self GET:urlString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
 			fulfiller(PMKManifold(responseObject, task));
 		} failure:^(NSURLSessionDataTask *task, NSError *error) {
-			rejecter(error);
+			rejecter(PMKManifold(error, task));
 		}] resume];
 	}];
 }
@@ -153,7 +153,7 @@
 		[[self PUT:urlString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
 			fulfiller(PMKManifold(responseObject, task));
 		} failure:^(NSURLSessionDataTask *task, NSError *error) {
-			rejecter(error);
+			rejecter(PMKManifold(error, task));
 		}] resume];
 	}];
 }
@@ -164,7 +164,7 @@
 		[[self HEAD:urlString parameters:parameters success:^(NSURLSessionDataTask *task) {
 			fulfiller(task);
 		} failure:^(NSURLSessionDataTask *task, NSError *error) {
-			rejecter(error);
+			rejecter(PMKManifold(error, task));
 		}] resume];
 	}];
 }
@@ -175,7 +175,7 @@
 		[[self PATCH:urlString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
 			fulfiller(PMKManifold(responseObject, task));
 		} failure:^(NSURLSessionDataTask *task, NSError *error) {
-			rejecter(error);
+			rejecter(PMKManifold(error, task));
 		}] resume];
 	}];
 }
@@ -186,7 +186,7 @@
 		[[self DELETE:urlString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
 			fulfiller(PMKManifold(responseObject, task));
 		} failure:^(NSURLSessionDataTask *task, NSError *error) {
-			rejecter(error);
+			rejecter(PMKManifold(error, task));
 		}] resume];
 	}];
 }

@@ -55,15 +55,15 @@
     }
     
     return promise.then(^(id responseObject, NSURLSessionTask *task) {
-        NSError *error = nil;
-        id parsedObject = [request parseResponseObject:responseObject error:&error];
-        return [PMKPromise new:^(PMKPromiseFulfiller fulfill, PMKPromiseRejecter reject) {
-            if (error) {
-                reject(error);
-            } else {
+        return [request parseResponseObject:responseObject].then(^(id parsedObject) {
+            return [PMKPromise new:^(PMKPromiseFulfiller fulfill, PMKPromiseRejecter reject) {
                 fulfill(PMKManifold(parsedObject, task));
-            }
-        }];
+            }];
+        }).catch(^(NSError *error) {
+            return [PMKPromise new:^(PMKPromiseFulfiller fulfill, PMKPromiseRejecter reject) {
+                reject(PMKManifold(error, task));
+            }];
+        });
     });
 }
 
