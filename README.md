@@ -6,7 +6,7 @@
 
 ## Usage
 
-Here's an excerpt from the super-minimal example project which demonstrates instantiating the manager pointing to httpbin.org, performing two sequential requests to get some data, and consuming the parsed response objects:
+Here's an excerpt from the super-minimal example project which demonstrates instantiating the manager pointing to http://httpbin.org, performing two sequential requests to get some data, and consuming the parsed response objects:
 
 ```Objective-C
 MBTNetworkManager *manager = [[MBTNetworkManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://httpbin.org"]];
@@ -36,7 +36,7 @@ it, simply add the following line to your Podfile:
 
 ## Author
 
-Matteo Battaglio, twitter.com/@m4dbat
+Matteo Battaglio, http://twitter.com/@m4dbat
 
 ## License
 
