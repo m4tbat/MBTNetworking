@@ -24,5 +24,5 @@ Pod::Spec.new do |s|
   
   s.dependency 'AFNetworking', '~> 2.5'
   s.dependency 'Mantle', '~> 1.5'
-  s.dependency 'PromiseKit', '~> 1.2'
+  s.dependency 'PromiseKit/Promise', '~> 1.2'
 end
