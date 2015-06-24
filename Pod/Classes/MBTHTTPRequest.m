@@ -14,31 +14,71 @@
 
 @implementation MBTHTTPRequest
 
+
++ (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
+                             path:(NSString *)path
+                       modelClass:(Class)modelClass {
+    return [self requestWithMethod:method path:path params:nil modelClass:modelClass];
+}
+
 + (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
                              path:(NSString *)path
                            params:(NSDictionary *)params
                        modelClass:(__unsafe_unretained Class)modelClass {
-    return [self requestWithMethod:method path:path params:params modelClass:modelClass jsonRootPath:nil];
+    return [self requestWithMethod:method path:path params:params headers:nil modelClass:modelClass];
+}
+
++ (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
+                             path:(NSString *)path
+                          headers:(NSDictionary *)headers
+                       modelClass:(Class)modelClass {
+    return [self requestWithMethod:method path:path params:nil headers:headers modelClass:modelClass];
 }
 
 + (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
                              path:(NSString *)path
                            params:(NSDictionary *)params
+                          headers:(NSDictionary *)headers
+                       modelClass:(Class)modelClass {
+    return [self requestWithMethod:method path:path params:params headers:headers modelClass:modelClass jsonRootPath:nil];
+}
+
++ (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
+                             path:(NSString *)path
+                       modelClass:(Class)modelClass
+                     jsonRootPath:(NSString *)jsonRootPath {
+    return [self requestWithMethod:method path:path params:nil modelClass:modelClass jsonRootPath:jsonRootPath];
+}
+
++ (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
+                             path:(NSString *)path
+                           params:(NSDictionary *)params
+                       modelClass:(Class)modelClass
+                     jsonRootPath:(NSString *)jsonRootPath {
+    return [self requestWithMethod:method path:path params:params headers:nil modelClass:modelClass jsonRootPath:jsonRootPath];
+}
+
++ (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
+                             path:(NSString *)path
+                          headers:(NSDictionary *)headers
+                       modelClass:(Class)modelClass
+                     jsonRootPath:(NSString *)jsonRootPath {
+    return [self requestWithMethod:method path:path params:nil headers:headers modelClass:modelClass jsonRootPath:jsonRootPath];
+}
+
++ (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
+                             path:(NSString *)path
+                           params:(NSDictionary *)params
+                          headers:(NSDictionary *)headers
                        modelClass:(__unsafe_unretained Class)modelClass
                      jsonRootPath:(NSString *)jsonRootPath {
-    return [[self alloc] initWithMethod:method path:path params:params modelClass:modelClass jsonRootPath:jsonRootPath];
+    return [[self alloc] initWithMethod:method path:path params:params headers:headers modelClass:modelClass jsonRootPath:jsonRootPath];
 }
 
 - (instancetype)initWithMethod:(MBTHTTPRequestMethod)method
                           path:(NSString *)path
                         params:(NSDictionary *)params
-                    modelClass:(Class)modelClass {
-    return [self initWithMethod:method path:path params:params modelClass:modelClass jsonRootPath:nil];
-}
-
-- (instancetype)initWithMethod:(MBTHTTPRequestMethod)method
-                          path:(NSString *)path
-                        params:(NSDictionary *)params
+                       headers:(NSDictionary *)headers
                     modelClass:(__unsafe_unretained Class)modelClass
                   jsonRootPath:(NSString *)jsonRootPath {
     self = [super init];

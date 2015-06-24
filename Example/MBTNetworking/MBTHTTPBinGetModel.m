@@ -11,12 +11,21 @@
 
 @implementation MBTHTTPBinGetModel
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             selStr(args): @"args",
+             selStr(headers): @"headers",
+             selStr(origin): @"origin",
+             selStr(url): @"url"
+             };
+}
+
 + (NSValueTransformer *)urlJSONTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
 + (NSValueTransformer *)headersJSONTransformer {
-    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[MBTHTTPBinHeadersModel class]];
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[MBTHTTPBinHeadersModel class]];
 }
 
 @end

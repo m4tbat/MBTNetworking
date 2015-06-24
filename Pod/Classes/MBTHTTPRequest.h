@@ -29,8 +29,28 @@ typedef NS_ENUM(NSInteger, MBTHTTPRequestMethod) {
 
 + (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
                              path:(NSString *)path
+                       modelClass:(Class)modelClass;
+
++ (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
+                             path:(NSString *)path
                            params:(NSDictionary *)params
                        modelClass:(Class)modelClass;
+
++ (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
+                             path:(NSString *)path
+                          headers:(NSDictionary *)headers
+                       modelClass:(Class)modelClass;
+
++ (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
+                             path:(NSString *)path
+                           params:(NSDictionary *)params
+                          headers:(NSDictionary *)headers
+                       modelClass:(Class)modelClass;
+
++ (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
+                             path:(NSString *)path
+                       modelClass:(Class)modelClass
+                     jsonRootPath:(NSString *)jsonRootPath;
 
 + (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
                              path:(NSString *)path
@@ -38,16 +58,18 @@ typedef NS_ENUM(NSInteger, MBTHTTPRequestMethod) {
                        modelClass:(Class)modelClass
                      jsonRootPath:(NSString *)jsonRootPath;
 
-- (instancetype)initWithMethod:(MBTHTTPRequestMethod)method
-                          path:(NSString *)path
-                        params:(NSDictionary *)params
-                    modelClass:(Class)modelClass;
++ (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
+                             path:(NSString *)path
+                          headers:(NSDictionary *)headers
+                       modelClass:(Class)modelClass
+                     jsonRootPath:(NSString *)jsonRootPath;
 
-- (instancetype)initWithMethod:(MBTHTTPRequestMethod)method
-                          path:(NSString *)path
-                        params:(NSDictionary *)params
-                    modelClass:(Class)modelClass
-                  jsonRootPath:(NSString *)jsonRootPath;
++ (instancetype)requestWithMethod:(MBTHTTPRequestMethod)method
+                             path:(NSString *)path
+                           params:(NSDictionary *)params
+                          headers:(NSDictionary *)headers
+                       modelClass:(Class)modelClass
+                     jsonRootPath:(NSString *)jsonRootPath;
 
 - (PMKPromise *)parseResponseObject:(id)responseObject;
 

@@ -1,2 +1,1 @@
-PODS_MBTNETWORKING_PROMISEKIT_GCC_PREPROCESSOR_DEFINITIONS = $(inherited) PMK_CALAYER=1 $(inherited) PMK_NSNOTIFICATIONCENTER=1 $(inherited) PMK_NSURLCONNECTION=1 $(inherited) PMK_PAUSE=1 $(inherited) PMK_UIACTIONSHEET=1 $(inherited) PMK_UIALERTVIEW=1 $(inherited) PMK_UIVIEW=1 $(inherited) PMK_UIVIEWCONTROLLER=1 $(inherited) PMK_UNTIL=1 $(inherited) PMK_WHEN=1
-PODS_MBTNETWORKING_PROMISEKIT_OTHER_LDFLAGS = -framework "Foundation" -framework "QuartzCore" -framework "UIKit" -weak_framework "AssetsLibrary"
+PODS_MBTNETWORKING_PROMISEKIT_OTHER_LDFLAGS = -framework "Foundation"
