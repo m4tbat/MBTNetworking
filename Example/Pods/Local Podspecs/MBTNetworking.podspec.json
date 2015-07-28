@@ -1,6 +1,6 @@
 {
   "name": "MBTNetworking",
-  "version": "0.4",
+  "version": "0.4.1",
   "summary": "A simple networking library for iOS based on AFNetworking 2, Mantle and PromiseKit.",
   "description": "A simple networking library for iOS based on AFNetworking 2, Mantle and PromiseKit.\nThe aim of MBTNetworking is to streamline the implementation of\nrequests to REST APIs and the mapping of the response objects to\nmodel objects.",
   "homepage": "https://github.com/madbat/MBTNetworking",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/madbat/MBTNetworking.git",
-    "tag": "0.4"
+    "tag": "0.4.1"
   },
   "social_media_url": "https://twitter.com/m4dbat",
   "platforms": {
