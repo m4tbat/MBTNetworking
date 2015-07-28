@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking+PromiseKit.h>
+#import "AFNetworking+PromiseKit.h"
 #import "MBTHTTPRequest.h"
 
 @interface MBTNetworkManager : NSObject

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Matteo Battaglio. All rights reserved.
 //
 
-#import <Mantle.h>
+#import "Mantle.h"
 
 #define selStr(sel) NSStringFromSelector(@selector(sel))
 

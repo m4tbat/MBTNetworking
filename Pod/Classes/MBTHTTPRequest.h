@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <MTLJSONAdapter.h>
-#import <PromiseKit.h>
+#import "MTLJSONAdapter.h"
+#import "PromiseKit.h"
 
 typedef NS_ENUM(NSInteger, MBTHTTPRequestMethod) {
     MBT_GET,

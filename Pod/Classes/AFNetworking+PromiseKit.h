@@ -21,9 +21,9 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
  */
-#import <AFNetworking/AFNetworking.h>
-#import <PromiseKit/PromiseKit.h>
-#import <Promise.h>
+#import "AFNetworking/AFNetworking.h"
+#import "PromiseKit/PromiseKit.h"
+#import "Promise.h"
 
 static NSString *AFHTTPRequestOperationErrorKey =  @"afHTTPRequestOperationError";
 

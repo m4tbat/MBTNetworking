@@ -7,8 +7,8 @@
 //
 
 #import "MBTNetworkManager.h"
-#import <AFNetworking.h>
-#import <Promise.h>
+#import "AFNetworking.h"
+#import "Promise.h"
 
 @interface MBTNetworkManager ()
 
