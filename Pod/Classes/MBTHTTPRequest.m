@@ -108,9 +108,9 @@
             parsedObject = [MTLJSONAdapter modelsOfClass:self.modelClass fromJSONArray:responseObject error:&error];
         } else if ([responseObject isKindOfClass:[NSDictionary class]]) {
             id unwrappedObject = self.jsonRootPath ? responseObject[self.jsonRootPath] : responseObject;
-            if ([responseObject isKindOfClass:[NSString class]] || [responseObject isKindOfClass:[NSNumber class]]) {
+            if ([unwrappedObject isKindOfClass:[NSString class]] || [unwrappedObject isKindOfClass:[NSNumber class]]) {
                 parsedObject = unwrappedObject;
-            } else if ([responseObject isKindOfClass:[NSArray class]]) {
+            } else if ([unwrappedObject isKindOfClass:[NSArray class]]) {
                 parsedObject = [MTLJSONAdapter modelsOfClass:self.modelClass fromJSONArray:unwrappedObject error:&error];
             } else if ([unwrappedObject isKindOfClass:[NSDictionary class]]) {
                 parsedObject = [MTLJSONAdapter modelOfClass:self.modelClass fromJSONDictionary:unwrappedObject error:&error];
