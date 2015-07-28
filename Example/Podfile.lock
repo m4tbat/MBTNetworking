@@ -23,11 +23,11 @@ PODS:
   - Mantle (2.0.2):
     - Mantle/extobjc (= 2.0.2)
   - Mantle/extobjc (2.0.2)
-  - MBTNetworking (0.3.1):
+  - MBTNetworking (0.4):
     - AFNetworking (~> 2.5)
     - Mantle (~> 2.0)
-    - PromiseKit/Promise (~> 1.2)
-  - PromiseKit/Promise (1.5.3)
+    - PromiseKit/Promise (~> 1.5)
+  - PromiseKit/Promise (1.6.0)
 
 DEPENDENCIES:
   - MBTNetworking (from `../`)
@@ -39,7 +39,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
-  MBTNetworking: 94a3e2738800230231fa3bbbc148a84551c16b90
-  PromiseKit: 7ecae7c190ab92ae00aae6ba7f88942107532b8f
+  MBTNetworking: 4d166a25ab24508351174d5d819ebf261e8f2e80
+  PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.38.2
